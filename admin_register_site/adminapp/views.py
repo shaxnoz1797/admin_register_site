@@ -27,12 +27,14 @@ def login_page(request):
     return render(request, 'login.html')
 
 
+
 @login_required_decorator
 def home_page(request):
-    return render(request, 'index.html')
+    return  render(request,'index.html')
+
 
 
 class SignUpView(generic.CreateView):
     form_class = UserCreationForm
-    success_url = reverse_lazy("login_page")
+    success_url =  reverse_lazy("login_page")
     template_name = "signup.html"
