@@ -32,7 +32,7 @@ urlpatterns = [
     path('subject/create/', subject_create, name='subject_create'),
     path('subject/<int:pk>/edit/', subject_edit, name='subject_edit'),
     path('subject/<int:pk>/delete/', subject_delete, name='subject_delete'),
-    path('subject/list/', subject_list, name='subject_list'),
+    path('subject/', subject_list, name='subject_list'),
 
     path('teachers/create/', teachers_create, name='teachers_create'),
     path('teachers/<int:pk>/edit/', teachers_edit, name='teachers_edit'),

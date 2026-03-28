@@ -232,3 +232,19 @@
        url('../fonts/poppins/poppins-v5-latin-900italic.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../fonts/poppins/poppins-v5-latin-900italic.svg#Poppins') format('svg'); /* Legacy iOS */
 }
+
+@font-face {
+  font-family: 'Material-Design-Iconic-Font';
+  src: url("../fonts/Material-Design-Iconic-Font.woff2") format("woff2"),
+       url("../fonts/Material-Design-Iconic-Font.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Poppins misol */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/poppins/poppins-v5-latin-regular.woff2') format('woff2');
+}

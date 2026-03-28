@@ -38,7 +38,7 @@ def login_page(request):
 def home_page(request):
     faculties = services.get_faculties()
     teachers = services.get_teachers()
-    subject = services.get_subject()
+    subjects = services.get_subject()
     groups = services.get_groups()
     students = services.get_students()
     kafedras = services.get_kafedra()
@@ -48,7 +48,7 @@ def home_page(request):
             'kafedras':  len(kafedras),
             'groups':  len(groups),
             'students':  len(students),
-            'subject':  len(subject),
+            'subjects':  len(subjects),
             'teachers':  len(teachers),
         }
     }
@@ -254,16 +254,15 @@ def students_list(request):
 @login_required_decorator
 def subject_create(request):
     model = Subject()
-    form = SubjectForm(request.POST, instance=model)
-    if request.POST and form.is_valid():
-        form.save()
-        return redirect('subject_list')
-    ctx = {
-        "form": form
-    }
-    return render(request, 'subject/form.html',ctx)
+    if request.method == "POST":
+        form = SubjectForm(request.POST, instance=model)
+        if form.is_valid():
+            form.save()
+            return redirect('subject_list')
+    else:
+            form = SubjectForm()
 
-
+    return render(request, 'subject/form.html',{"form": form})
 
 @login_required_decorator
 def subject_edit(request,pk):
@@ -289,10 +288,10 @@ def subject_delete(request,pk):
 
 @login_required_decorator
 def subject_list(request):
-    subject = services.get_subject()
-    print(subject)
+    subjects = services.get_subject()
+    print(subjects)
     ctx = {
-        "subject": subject
+        "subjects": subjects
     }
     return render(request, 'subject/list.html',ctx)
 

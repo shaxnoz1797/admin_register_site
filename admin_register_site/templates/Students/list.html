@@ -36,14 +36,14 @@
                                 <tbody>
                                     {% for student in students %}
                                     <tr>
-                                        <td>{{ students.id }}</td>
-                                        <td>{{ students.name }}</td>
+                                        <td>{{ student.id }}</td>
+                                        <td>{{ student.name }}</td>
                                         <td>
                                             <div class="table-data-feature">
-                                                <a class="item" data-toggle="tooltip" href="{% url 'students_edit' pk=students.id %}" data-placement="top" title="" data-original-title="Edit">
+                                                <a class="item" data-toggle="tooltip" href="{% url 'students_edit' pk=student.id %}" data-placement="top" title="" data-original-title="Edit">
                                                     <i class="zmdi zmdi-edit text-warning"></i>
                                                 </a>
-                                                <a class="item" data-toggle="tooltip" href="{% url 'students_delete' pk=students.id %}" data-placement="top" title="" data-original-title="Delete">
+                                                <a class="item" data-toggle="tooltip" href="{% url 'students_delete' pk=student.id %}" data-placement="top" title="" data-original-title="Delete">
                                                     <i class="zmdi zmdi-delete text-danger"></i>
                                                 </a>
                                             </div>
